@@ -70,3 +70,42 @@ generateCoinChange(94);
 //Finally, we print the number of each coin.
 
 //##########################################################################################################
+
+//3.
+//Messy Math Mashup
+
+/* Create messyMath(num), which will return the following sum: add all integers from 0 up to the given num,
+except for the following special cases of our count value:
+
+If current count (not num) is evenly divisible by 3, don’t add to sum; skip to the next count;
+Otherwise, if current count is evenly divisible by 7, include it twice in sum instead of once;
+Regardless of the above, if current count is exactly 1/3 of num, return -1 immediately.
+For example, if given num is 4, return 7. If given num is 8, return 34. If given num is 15, return -1.*/
+
+function messyMath(num){
+    var sum = 0;
+    for(var i = 0; i <= num; i++){
+        if(i == num / 3){
+            return -1;
+        }else if(i % 3 == 0){
+            continue;
+        }else if(i % 7 == 0){
+            sum += i * 2;
+        }else{
+            sum += i;
+        }
+    }
+    return sum;
+}
+
+console.log(messyMath(4));
+console.log(messyMath(8));
+console.log(messyMath(15));
+
+//We set the sum to 0 and then we loop through the range of 0 to num.
+//If the current count is 1/3 of num, we return -1.
+//If the current count is divisible by 3, we continue to the next iteration.
+//If the current count is divisible by 7, we add it to the sum twice.
+//Otherwise, we add it to the sum.
+
+//##########################################################################################################
