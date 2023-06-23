@@ -163,3 +163,32 @@ console.log(fibonacci(3));
 
 //##########################################################################################################
 
+//6.
+//Sum to One Digit
+
+/* Kaitlin sees beauty in numbers, but also believes that less is more.
+Implement sumToOne(num) that sums a given integer’s digits repeatedly until the sum is only one digit.
+Return that one-digit result. Example: sumToOne(928) returns 1, because 9+2+8 = 19, then 1+9 = 10, then 1+0 = 1.*/
+//Do this with recursion.
+
+function sumToOne(num){
+    var sum = 0;
+    while(num > 0){
+        sum += num % 10;
+        num = Math.floor(num / 10);
+    }
+    if(sum > 9){
+        return sumToOne(sum);
+    }else{
+        return sum;
+    }
+}
+
+console.log(sumToOne(928));
+
+//We set the sum to 0 and then we loop through the number while it is greater than 0.
+//We add the last digit of the number to the sum and then remove the last digit from the number.
+//If the sum is greater than 9, we call the function again with the sum as the argument.
+//Otherwise, we return the sum.
+
+//##########################################################################################################
