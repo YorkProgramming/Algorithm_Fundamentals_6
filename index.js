@@ -109,3 +109,26 @@ console.log(messyMath(15));
 //Otherwise, we add it to the sum.
 
 //##########################################################################################################
+
+//4.
+// Twelve-Bar Blues
+
+/* Write a function that console.logs the number 1, then "chick", then "boom", then "chick", then 2,
+then "chick", "boom", "chick" – continuing the same cycle for each number up to (including) 12.*/
+
+function twelveBarBlues(){
+    for(var i = 1; i <= 12; i++){
+        console.log(i);
+        console.log("chick");
+        console.log("boom");
+        console.log("chick");
+    }
+}
+
+twelveBarBlues();
+
+//We loop through the range of 1 to 12 and print the number, "chick", "boom", and "chick" for each iteration.
+
+//##########################################################################################################
+
+
