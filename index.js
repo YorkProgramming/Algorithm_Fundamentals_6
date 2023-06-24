@@ -192,3 +192,50 @@ console.log(sumToOne(928));
 //Otherwise, we return the sum.
 
 //##########################################################################################################
+
+//7.
+//Clock Hand Angles
+
+/* Regardless of how hard a Dojo student works (and they should work hard), they need time now and then to unwind
+– like hands on a clock. Traditional clocks are increasingly uncommon, but most can still read an analog clock's
+hands of hours, minutes, and seconds. Create clockHandAngles(seconds) that, given a number of seconds since 12:00:00,
+prints angles (in degrees) of the hour, minute and second hands. As review, 360 degrees form a full rotation.
+For input of 3600 secs (equivalent to 1:00:00), print "Hour hand: 30 degs. Minute hand: 0 degs. Second hand: 0 degs."
+For an input parameter seconds of 119730 (which is equivalent to 9:15:30 plus 24 hours!), you should log
+"Hour hand: 277.745 degs. Minute hand: 93 degs. Second hand: 180 degs." Note: in the second example,
+the angle for the minute hand is not simply 90 degrees; it has advanced a bit further, because of the additional
+30 seconds in that minute so far.*/
+
+function clockHandAngles(seconds){
+    var hour = Math.floor(seconds / 3600);
+
+    var minute = Math.floor((seconds % 3600) / 60);
+
+    var second = seconds % 60;
+
+    var hourAngle = hour * 30 + minute * 0.5 + second * 0.008333333333333333;
+
+    var minuteAngle = minute * 6 + second * 0.1;
+
+    var secondAngle = second * 6;
+
+
+    console.log("Hour hand: " + hourAngle + " degs. Minute hand: " + minuteAngle + " degs. Second hand: " + secondAngle + " degs.");
+}
+
+clockHandAngles(3600);
+clockHandAngles(119730);
+
+//We set the hour to the number of hours in the seconds.
+//We set the minute to the number of minutes in the seconds.
+//We set the second to the number of seconds in the seconds.
+//We set the hour angle to the hour times 30 plus the minute times 0.5 plus the second times 0.008333333333333333.
+//We set the minute angle to the minute times 6 plus the second times 0.1.
+//We set the second angle to the second times 6.
+//We do this because there are 360 degrees in a circle and 12 hours in a clock.
+//So there are 30 degrees in an hour and 0.5 degrees in a minute and 0.008333333333333333 degrees in a second.
+//Finally, we print the angles of the hour, minute, and second hands.
+
+//##########################################################################################################
+
+
