@@ -238,4 +238,35 @@ clockHandAngles(119730);
 
 //##########################################################################################################
 
+//8.
+//Is Prime
+
+/* Return whether a given integer is prime. Prime numbers are only evenly divisible by themselves and 1.
+Many highly optimized solutions exist, but for now just create one that is easy to understand and debug.*/
+//Examples: isPrime(2) returns true, isPrime(3) returns true, isPrime(4) returns false, isPrime(9) returns false,
+//isPrime(17) returns true, isPrime(147) returns false.*/
+//Do this without using the built-in Prime number algorithm.
+
+function isPrime(num){
+    for(var i = 2; i < num; i++){
+        if(num % i == 0){
+            return false;
+        }
+    }
+
+    return true;
+}
+
+console.log(isPrime(2));
+console.log(isPrime(3));
+console.log(isPrime(4));
+console.log(isPrime(9));
+console.log(isPrime(17));
+console.log(isPrime(147));
+
+//We loop through the range of 2 to num and check if the number is divisible by any number in that range.
+//If it is, we return false.
+//Otherwise, we return true.
+
+//##########################################################################################################
 
